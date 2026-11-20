@@ -1,0 +1,6 @@
+{
+  "appId": "com.moamen.receipts",
+  "appName": "دفتر الوصولات",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
