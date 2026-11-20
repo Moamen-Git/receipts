@@ -114,7 +114,6 @@ label{display:block;margin:10px 0 6px;font-size:14px;font-weight:600}
 .backup p{margin:0 0 12px;color:var(--muted);font-size:14px}
 .backup .row{display:flex;gap:10px;flex-wrap:wrap}
 .backup .btn{flex:1 1 150px;min-height:46px;font-size:15px}
-.ver{margin:18px 0 0;text-align:center;font-size:12px;color:var(--muted)}
 .bkmsg{margin:10px 0 0;min-height:21px;font-size:14px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.panel{animation:none}}
 </style>
@@ -141,7 +140,6 @@ label{display:block;margin:10px 0 6px;font-size:14px;font-weight:600}
       <button id="bkRestore" class="btn" type="button">استرجاع من نسخة</button>
     </div>
     <p id="bkMsg" class="bkmsg" role="status" aria-live="polite"></p>
-    <p class="ver">النسخة 2</p>
   </section>
 </div>
 <input id="fileRestore" type="file" accept=".json,application/json" hidden>
@@ -310,9 +308,8 @@ label{display:block;margin:10px 0 6px;font-size:14px;font-weight:600}
       return (b.d-a.d)||((b.it.createdAt||0)-(a.it.createdAt||0));
     });
     var rows=all.filter(function(r){return tokens.every(function(t){return r.hay.indexOf(t)>-1})});
-    var where=state.backend?state.backend.label:'';
-    if(!all.length){meta.textContent=where;list.append(emptyState());return}
-    meta.textContent=(tokens.length?rows.length+' من '+all.length:all.length)+' وصل · '+where;
+    if(!all.length){meta.textContent='';list.append(emptyState());return}
+    meta.textContent=(tokens.length?rows.length+' من '+all.length:all.length)+' وصل';
     if(!rows.length){list.append(el('p','note','مفيش وصل بيطابق «'+state.q.trim()+'». جرّب كلمة تانية، زي اسم الحاجة أو الشهر.'));return}
     var key='',cards=null;
     rows.forEach(function(r){
